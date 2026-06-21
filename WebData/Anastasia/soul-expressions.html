@@ -1,0 +1,536 @@
+<!-- Soul Expressions — single page site. Runic-witchy x American Traditional. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soul Expressions — Temecula</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amarante&family=DotGothic16&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Viaoda+Libre&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0A0A0D;
+  --panel:#101117;
+  --panel-2:#15161e;
+  --blue:#7FC9E8;
+  --blue-deep:#4F97BE;
+  --gold:#C9A227;
+  --gold-lt:#E6CC76;
+  --white:#F2F0E9;
+  --muted:rgba(242,240,233,.58);
+  --line:rgba(201,162,39,.28);
+  --line-soft:rgba(242,240,233,.10);
+  --display:'Cinzel',serif;
+  --body:'Cormorant Garamond',serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 600px at 50% -10%, rgba(79,151,190,.10), transparent 60%),
+    radial-gradient(700px 500px at 85% 20%, rgba(201,162,39,.06), transparent 60%),
+    var(--bg);
+  color:var(--white);
+  font-family:var(--body);
+  font-weight:300;
+  font-size:clamp(1.02rem,.6vw + .95rem,1.18rem);
+  line-height:1.7;
+  letter-spacing:.2px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:.06em;margin:0}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+.eyebrow{
+  font-family:var(--display);font-size:.72rem;letter-spacing:.42em;
+  text-transform:uppercase;color:var(--gold);font-weight:500;
+}
+.rune-rule{
+  display:flex;align-items:center;gap:18px;color:var(--gold);
+  font-size:.95rem;letter-spacing:.55em;justify-content:center;margin:6px 0 0;
+  opacity:.7;
+}
+.rune-rule::before,.rune-rule::after{
+  content:"";height:1px;flex:1;max-width:160px;
+  background:linear-gradient(90deg,transparent,var(--line),transparent);
+}
+
+/* ---------- sticky nav ---------- */
+header.bar{
+  position:sticky;top:0;z-index:40;
+  backdrop-filter:blur(10px);
+  background:rgba(10,10,13,.74);
+  border-bottom:1px solid var(--line-soft);
+}
+.bar .wrap{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  min-height:60px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px;
+}
+.mark{
+  font-family:var(--display);letter-spacing:.16em;font-size:1.02rem;
+  color:var(--white);text-transform:uppercase;display:flex;align-items:center;gap:10px;
+}
+.mark .glyph{color:var(--gold);font-size:.9em}
+nav.links{display:flex;gap:6px;flex-wrap:wrap}
+nav.links a{
+  font-family:var(--display);font-size:.7rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--muted);padding:8px 12px;border-radius:2px;
+  transition:color .25s, background .25s;
+}
+nav.links a:hover,nav.links a:focus-visible{color:var(--blue);background:rgba(127,201,232,.07)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;text-align:center;padding:clamp(44px,9vw,96px) 0 clamp(40px,7vw,72px);overflow:hidden}
+.stars{position:absolute;inset:0;pointer-events:none;opacity:.55}
+.seal{width:clamp(190px,42vw,260px);height:auto;display:block;margin:0 auto 26px}
+@media(prefers-reduced-motion:no-preference){
+  .seal .ring-rot{transform-origin:100px 100px;animation:spin 80s linear infinite}
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero h1{
+  font-family: "Amarante", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:clamp(2.5rem,8vw,4.6rem);line-height:1;letter-spacing:.1em;
+  text-transform:uppercase;
+  background:linear-gradient(180deg,var(--white),var(--gold-lt) 40%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .tag{color:var(--blue);font-style:italic;font-size:1.25rem;margin-top:14px;letter-spacing:.04em}
+.contactline{
+  margin-top:26px;display:flex;gap:10px 28px;justify-content:center;flex-wrap:wrap;
+  font-size:1.02rem;color:var(--muted);
+}
+.contactline a{color:var(--white);border-bottom:1px solid var(--line)}
+.contactline a:hover{color:var(--gold-lt)}
+.contactline .pin{color:var(--gold);margin-right:6px}
+
+/* ---------- section frame ---------- */
+section{padding:clamp(48px,8vw,88px) 0}
+.section-head{text-align:center;margin-bottom:clamp(28px,5vw,48px)}
+.section-head h2{font-size:clamp(1.7rem,5vw,2.6rem);text-transform:uppercase;letter-spacing:.12em;margin-top:14px}
+
+/* ---------- about ---------- */
+.about p{
+  max-width:720px;margin:0 auto;text-align:center;font-size:clamp(1.15rem,2.4vw,1.4rem);
+  line-height:1.85;color:rgba(242,240,233,.86);
+}
+.about .drop{font-family:var(--display);color:var(--gold);font-size:1.1em}
+
+/* ---------- artists table ---------- */
+.artists-frame{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.artists-grid{
+  display:grid;grid-template-columns:minmax(180px,1fr) minmax(0,1.5fr) minmax(220px,1.1fr);
+}
+.col{padding:clamp(22px,3vw,34px) clamp(18px,2.4vw,30px)}
+.col + .col{border-left:1px solid var(--line-soft)}
+.col h3{
+  font-family:var(--display);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:20px;font-weight:500;
+}
+
+/* name list */
+.names{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.names button{
+  width:100%;text-align:left;background:none;border:0;cursor:pointer;color:var(--white);
+  font-family:var(--body);font-size:1.45rem;letter-spacing:.02em;padding:10px 12px;
+  border-left:2px solid transparent;transition:.25s;border-radius:2px;
+}
+.names button .sub{display:block;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-family:var(--display)}
+.names button:hover{color:var(--blue);background:rgba(127,201,232,.05)}
+.names button[aria-current="true"]{
+  color:var(--gold-lt);border-left-color:var(--gold);background:rgba(201,162,39,.07);
+}
+
+/* gallery */
+.gallery{
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  max-height:360px;overflow-y:auto;padding-right:6px;scrollbar-width:thin;
+  scrollbar-color:var(--gold) transparent;
+}
+.gallery::-webkit-scrollbar{width:8px}
+.gallery::-webkit-scrollbar-thumb{background:var(--line);border-radius:8px}
+.tile{
+  aspect-ratio:1/1;border:1px solid var(--line);border-radius:3px;
+  background:radial-gradient(120% 120% at 50% 0%, rgba(79,151,190,.10), var(--panel-2));
+  display:flex;align-items:center;justify-content:center;transition:.3s;position:relative;
+  overflow:hidden;                              /* keep photos inside rounded corners */
+}
+.tile:hover{border-color:var(--gold);transform:translateY(-2px)}
+.tile svg{width:62%;height:62%}
+.tile img{                                       /* real photos fill the square */
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .35s ease;
+}
+.tile:hover img{transform:scale(1.05)}
+.gallery .hint{grid-column:1/-1;font-size:.82rem;color:var(--muted);text-align:center;font-style:italic;padding:6px}
+
+/* contact card */
+.card .head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.headshot{
+  width:60px;height:60px;border-radius:50%;flex:none;border:1px solid var(--gold);
+  display:grid;place-items:center;background:var(--panel-2);overflow:hidden;
+}
+.headshot svg{width:100%;height:100%}
+.headshot img{width:100%;height:100%;object-fit:cover;display:block}  /* real profile photo */
+.card .who{font-family:var(--display);font-size:1.05rem;letter-spacing:.1em;text-transform:uppercase}
+.card .role{font-size:.85rem;color:var(--blue);letter-spacing:.04em}
+.card .bio{font-size:1.05rem;color:rgba(242,240,233,.82);margin:0 0 18px}
+.card .meta{display:flex;flex-direction:column;gap:8px;font-size:1rem}
+.card .meta a{display:inline-flex;align-items:center;gap:10px;color:var(--white)}
+.card .meta a:hover{color:var(--gold-lt)}
+.card .meta .ic{color:var(--gold);width:18px;text-align:center}
+
+/* ---------- inquiry ---------- */
+.inquiry-wrap{
+  max-width:620px;margin:0 auto;border:1px solid var(--line);border-radius:4px;
+  background:linear-gradient(180deg,var(--panel),rgba(16,17,23,.4));
+  padding:clamp(26px,4vw,42px);
+}
+.field{margin-bottom:18px}
+.field label{
+  display:block;font-family:var(--display);font-size:.68rem;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:7px;
+}
+.field input,.field textarea{
+  width:100%;background:rgba(10,10,13,.6);border:1px solid var(--line-soft);
+  border-radius:3px;color:var(--white);font-family:var(--body);font-size:1.12rem;
+  padding:12px 14px;transition:border-color .25s, box-shadow .25s;
+}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field textarea:focus{
+  outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(127,201,232,.14);
+}
+.send{
+  width:100%;cursor:pointer;border:1px solid var(--gold);
+  background:linear-gradient(180deg,rgba(201,162,39,.16),rgba(201,162,39,.04));
+  color:var(--gold-lt);font-family:var(--display);font-size:.82rem;letter-spacing:.28em;
+  text-transform:uppercase;padding:15px;border-radius:3px;transition:.25s;
+}
+.send:hover{background:var(--gold);color:#1a1305;letter-spacing:.34em}
+.note{margin-top:14px;font-size:.92rem;color:var(--muted);text-align:center;font-style:italic;min-height:1.2em}
+.note.err{color:#e8a07f;font-style:normal}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:clamp(36px,6vw,56px) 0;text-align:center}
+footer .fmark{font-family:var(--display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);font-size:1.1rem}
+footer .frune{color:var(--gold);letter-spacing:.5em;font-size:.9rem;margin:14px 0;opacity:.7}
+footer .finfo{color:var(--muted);font-size:1.02rem;line-height:1.9}
+footer .finfo a{color:var(--white);border-bottom:1px solid var(--line)}
+footer .finfo a:hover{color:var(--gold-lt)}
+
+/* ---------- responsive ---------- */
+@media(max-width:860px){
+  .artists-grid{grid-template-columns:1fr}
+  .col + .col{border-left:0;border-top:1px solid var(--line-soft)}
+  .gallery{grid-template-columns:repeat(4,minmax(120px,1fr));grid-auto-flow:column;grid-auto-columns:minmax(120px,1fr);
+           max-height:none;overflow-x:auto;overflow-y:hidden;padding-bottom:8px}
+  .gallery .hint{grid-column:auto;writing-mode:initial;display:none}
+}
+@media(max-width:560px){
+  .bar .wrap{justify-content:center}
+  nav.links{justify-content:center}
+}
+</style>
+
+<!-- ============ NAV ============ -->
+<header class="bar">
+  <div class="wrap">
+    <div class="mark"><span class="glyph">ᛟ</span> Soul Expressions</div>
+    <nav class="links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#artists">Artists</a>
+      <a href="#inquiry">Inquiry</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <svg class="stars" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="#7FC9E8">
+      <circle cx="120" cy="80" r="1.2"/><circle cx="300" cy="40" r="1"/><circle cx="520" cy="100" r="1.4"/>
+      <circle cx="760" cy="60" r="1"/><circle cx="880" cy="140" r="1.3"/><circle cx="200" cy="180" r="1"/>
+      <circle cx="650" cy="190" r="1.1"/><circle cx="430" cy="220" r="1"/><circle cx="940" cy="250" r="1.2"/>
+      <circle cx="70" cy="260" r="1"/><circle cx="350" cy="300" r="1.3"/><circle cx="600" cy="320" r="1"/>
+    </g>
+    <g fill="#C9A227"><circle cx="480" cy="30" r="1.4"/><circle cx="820" cy="210" r="1.4"/><circle cx="160" cy="340" r="1.4"/></g>
+  </svg>
+
+  <!-- emblem: all-seeing eye in clouds with radiating light (witchy x am.trad) -->
+  <svg class="seal" viewBox="0 0 200 200" role="img" aria-label="Soul Expressions all-seeing eye emblem">
+    <defs>
+      <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%"  stop-color="#7FC9E8" stop-opacity=".30"/>
+        <stop offset="70%" stop-color="#7FC9E8" stop-opacity=".06"/>
+        <stop offset="100%" stop-color="#7FC9E8" stop-opacity="0"/>
+      </radialGradient>
+      <!-- a single stylized cloud puff, reused & transformed -->
+      <path id="cloud" d="M8,30 a8,8 0 0 1 0,-16 a12,12 0 0 1 23,-4 a10,10 0 0 1 19,4 a8,8 0 0 1 0,16 z"/>
+    </defs>
+
+    <!-- soft glow behind the eye -->
+    <circle cx="100" cy="100" r="66" fill="url(#eyeGlow)"/>
+
+    <!-- radiating light rays (slowly rotating sunburst) -->
+    <g class="ring-rot" fill="#C9A227" opacity=".9">
+      <polygon points="100,12 96,52 104,52"/>
+      <polygon points="100,30 97.5,52 102.5,52" transform="rotate(30 100 100)"/>
+      <polygon points="100,12 96,52 104,52"     transform="rotate(60 100 100)"/>
+      <polygon points="100,30 97.5,52 102.5,52" transform="rotate(90 100 100)"/>
+      <polygon points="100,12 96,52 104,52"     transform="rotate(120 100 100)"/>
+      <polygon points="100,30 97.5,52 102.5,52" transform="rotate(150 100 100)"/>
+      <polygon points="100,12 96,52 104,52"     transform="rotate(180 100 100)"/>
+      <polygon points="100,30 97.5,52 102.5,52" transform="rotate(210 100 100)"/>
+      <polygon points="100,12 96,52 104,52"     transform="rotate(240 100 100)"/>
+      <polygon points="100,30 97.5,52 102.5,52" transform="rotate(270 100 100)"/>
+      <polygon points="100,12 96,52 104,52"     transform="rotate(300 100 100)"/>
+      <polygon points="100,30 97.5,52 102.5,52" transform="rotate(330 100 100)"/>
+    </g>
+
+    <!-- wreath of clouds around the eye -->
+    <g stroke="#7FC9E8" stroke-width="1.2" stroke-linejoin="round" fill="rgba(127,201,232,.10)">
+      <use href="#cloud" transform="translate(52 116) scale(1.55)" opacity=".95"/>
+      <use href="#cloud" transform="translate(2 122)  scale(1.0)"  opacity=".82"/>
+      <use href="#cloud" transform="translate(120 124) scale(1.05)" opacity=".82"/>
+      <use href="#cloud" transform="translate(2 50)   scale(.85)"  opacity=".70"/>
+      <use href="#cloud" transform="translate(118 48) scale(.85)"  opacity=".70"/>
+      <use href="#cloud" transform="translate(66 28)  scale(.78)"  opacity=".70"/>
+    </g>
+
+    <!-- the eye -->
+    <g>
+      <!-- almond / lid -->
+      <path d="M62 100 Q100 73 138 100 Q100 127 62 100 Z"
+            fill="rgba(10,10,13,.66)" stroke="#C9A227" stroke-width="1.7" stroke-linejoin="round"/>
+      <!-- iris -->
+      <circle cx="100" cy="100" r="14.5" fill="rgba(127,201,232,.16)" stroke="#7FC9E8" stroke-width="1.4"/>
+      <!-- iris striations -->
+      <g stroke="#7FC9E8" stroke-width=".7" opacity=".6">
+        <line x1="100" y1="86.5" x2="100" y2="91"/>
+        <line x1="100" y1="109"  x2="100" y2="113.5"/>
+        <line x1="86.5" y1="100" x2="91" y2="100"/>
+        <line x1="109" y1="100"  x2="113.5" y2="100"/>
+      </g>
+      <!-- pupil + glint -->
+      <circle cx="100" cy="100" r="6" fill="#C9A227"/>
+      <circle cx="96.6" cy="96.6" r="1.8" fill="#E6CC76"/>
+    </g>
+  </svg>
+
+  <h1>Soul Expressions</h1>
+  <div class="tag">Established « in « 1993</div>
+
+  <div class="contactline">
+    <span><span class="pin">☎</span><a href="tel:9519543080">951&#8209;954&#8209;3080</a></span>
+    <span><span class="pin">⚲</span><a href="https://maps.google.com/?q=27326+Jefferson+Ave+STE+15,+Temecula,+CA+92590" target="_blank" rel="noopener">27326 Jefferson Ave STE 15, Temecula, CA 92590</a></span>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ᚪᛒᚩᚢᛏ ᚢᛋ</div>
+
+      <h2>About Us</h2>
+
+      <div class="rune-rule">ᚱ ᚢ ᚾ ᛖ</div>
+    </div>
+    <p><span class="drop">T</span>emecula's first and finest tattoo studio Soul Expressions Tattoo opened in 1993 and continues to be the premier tattoo studio in the Inland Empire.</p>
+    <br>
+    <p><span class="drop">S</span>oul Expressions Studios houses 7 tattoo artist. Each artist specializes in different styles of tattooing. Traditional, poly tribal, photo realism, black and grey, full color, and more. The shop has been standing strong for 25 years !! New artist, new talent- sane great shop! </p>
+
+  </div>
+</section>
+
+<!-- ============ ARTISTS ============ -->
+<section id="artists">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ᛏᚺᛖ ᚺᚨᚾᛞᛊ ᛒᛖᚺᛁᚾᛞ ᚦᛖ ᛁᚾᚲ</div>
+      <h2>Meet the Artists</h2>
+      <div class="rune-rule">ᛊ ᛟ ᚢ ᛚ</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="artists-frame">
+      <div class="artists-grid">
+        <!-- names -->
+        <div class="col">
+          <h3>Artists</h3>
+          <ul class="names" id="nameList" role="tablist" aria-label="Select an artist"></ul>
+        </div>
+        <!-- gallery -->
+        <div class="col">
+          <h3>Gallery</h3>
+          <div class="gallery" id="gallery" aria-live="polite"></div>
+        </div>
+        <!-- contact -->
+        <div class="col card" id="card"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INQUIRY ============ -->
+<section id="inquiry">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ᛒᛖᚷᛁᚾ ᚦᛖ ᚱᛁᛏᚢᚨᛚ</div>
+      <h2>Shop Inquiry</h2>
+      <div class="rune-rule">ᚦ ᛖ ᛁ ᛉ</div>
+    </div>
+    <div class="inquiry-wrap">
+      <div class="field">
+        <label for="f-name">Your Name</label>
+        <input id="f-name" type="text" autocomplete="name" placeholder="Name">
+      </div>
+      <div class="field">
+        <label for="f-num">Phone Number</label>
+        <input id="f-num" type="tel" autocomplete="tel" placeholder="Number">
+      </div>
+      <div class="field">
+        <label for="f-msg">Message</label>
+        <textarea id="f-msg" placeholder="Tell us about the piece you're dreaming of — placement, size, style, dates."></textarea>
+      </div>
+      <button class="send" id="sendBtn">Send the Sigil ✦</button>
+      <div class="note" id="formNote"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fmark">Soul Expressions</div>
+    <div class="frune">ᛋ ᛟ ᚢ ᛚ · ᛖ ᚲ ᛈ ᚱ</div>
+    <div class="finfo">
+      <a href="https://maps.google.com/?q=27326+Jefferson+Ave+STE+15,+Temecula,+CA+92590" target="_blank" rel="noopener">27326 Jefferson Ave STE 15, Temecula, CA 92590</a><br>
+      Shop: <a href="tel:9519543080">951&#8209;954&#8209;3080</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+
+const S = (inner)=>`<svg viewBox="0 0 100 100" fill="none" stroke="#C9A227" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">${inner}</svg>`;
+const motifs = {
+  rose:   S('<circle cx="50" cy="42" r="12"/><path d="M50 30v24M38 42h24" stroke="#7FC9E8"/><path d="M50 54c0 14 8 18 8 18M50 54c0 14-8 18-8 18" stroke="#7FC9E8"/><path d="M42 66c-10 0-14 6-14 6M58 66c10 0 14 6 14 6"/>'),
+  dagger: S('<path d="M50 18l6 26-6 38-6-38z" fill="rgba(127,201,232,.08)"/><path d="M30 44h40"/><path d="M44 44V30a6 6 0 0112 0v14" stroke="#7FC9E8"/>'),
+  swallow:S('<path d="M20 40c14-2 24 6 30 16 6-10 16-18 30-16-12 4-18 14-22 24M50 56c-2 8-8 14-16 16M50 56c2 8 8 14 16 16" stroke="#7FC9E8"/>'),
+  moon:   S('<path d="M58 22a30 30 0 100 56 24 24 0 110-56z"/><circle cx="30" cy="30" r="2" fill="#E6CC76" stroke="none"/><circle cx="74" cy="68" r="2" fill="#E6CC76" stroke="none"/>'),
+  eye:    S('<path d="M18 50c12-18 52-18 64 0-12 18-52 18-64 0z"/><circle cx="50" cy="50" r="10" stroke="#7FC9E8"/><circle cx="50" cy="50" r="3" fill="#C9A227" stroke="none"/>'),
+  snake:  S('<path d="M28 76c0-16 16-16 16-28S30 22 30 22M44 48c0 12 14 12 14 0s12-16 18-10" stroke="#7FC9E8"/><circle cx="30" cy="20" r="3"/>'),
+  anchor: S('<circle cx="50" cy="24" r="6"/><path d="M50 30v40"/><path d="M34 44h32"/><path d="M26 56c0 16 12 22 24 22s24-6 24-22" stroke="#7FC9E8"/>'),
+  hand:   S('<path d="M36 78V46a4 4 0 018 0v-6a4 4 0 018 0v6a4 4 0 018 0v8a4 4 0 018 0v10c0 12-8 18-20 18z"/><circle cx="50" cy="58" r="6" stroke="#7FC9E8"/>'),
+};
+const head = (initials)=>`<svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#15161e"/><circle cx="30" cy="24" r="11" fill="none" stroke="#7FC9E8" stroke-width="1.4"/><path d="M12 54c2-12 10-18 18-18s16 6 18 18" fill="none" stroke="#C9A227" stroke-width="1.4"/><text x="30" y="50" text-anchor="middle" font-family="Cinzel,serif" font-size="9" letter-spacing="1" fill="#E6CC76">${initials}</text></svg>`;
+
+/* ===========================================================================
+   ARTIST DATA
+   ---------------------------------------------------------------------------
+   pfp : link to the artist's profile photo.  Leave as '' to use the
+         auto-generated avatar (the gold circle with their initials).
+         Examples:  pfp:'art/barbara/face.jpg'
+                    pfp:'https://example.com/barbara.jpg'
+
+   art : the gallery. Each entry is EITHER
+           • a link to a real tattoo photo  -> 'art/barbara/piece1.jpg'
+                                              or 'https://.../piece1.jpg'
+           • OR one of the built-in motif names below (placeholder line art):
+             rose · dagger · swallow · moon · eye · snake · anchor · hand
+         You can mix the two while you're still collecting photos.
+   =========================================================================== */
+const artists = [
+  { name:'Barabara', role:'Artist', initials:'', ig:'babsie_tatts', num:'951-813-7900',
+    bio:'Bio Here',
+    pfp:'WebData/Babs/PFP.jpg',
+    art:[
+      'WebData/Babs/Art1.jpg',
+      'WebData/Babs/Art2.jpg',
+      'WebData/Babs/Art3.jpg',
+      'WebData/Babs/Art4.jpg'
+    ] },
+  { name:'Anastasia', role:'Artist', initials:'', ig:'cemeteryofsorrow', num:'951-123-1234',
+    bio:'Bio Here',
+    pfp:'WebData/Anastasia/PFP.jpg',
+    art:[
+      'WebData/Anastasia/Art1.jpg',
+      'WebData/Anastasia/Art2.jpg',
+      'WebData/Anastasia/Art3.jpg',
+      'WebData/Anastasia/Art4.jpg'
+    ] }
+];
+
+function isImg(s){
+  return typeof s==='string' &&
+    (/^(https?:|data:|\/|\.\/|\.\.\/)/i.test(s) ||
+     /\.(jpe?g|png|webp|gif|avif|svg)(\?.*)?$/i.test(s));
+}
+
+const nameList=document.getElementById('nameList');
+const gallery=document.getElementById('gallery');
+const card=document.getElementById('card');
+
+function render(i){
+  const a=artists[i];
+  // names
+  nameList.innerHTML=artists.map((x,j)=>
+    `<li role="presentation"><button role="tab" aria-current="${j===i}" data-i="${j}">
+       ${x.name}<span class="sub">${x.role}</span>
+     </button></li>`).join('');
+  // gallery — real photo if it's a link, otherwise the placeholder motif
+  gallery.innerHTML=(a.art||[]).map(m=>{
+    const inner = isImg(m)
+      ? `<img src="${m}" alt="Tattoo by ${a.name}" loading="lazy">`
+      : (motifs[m]||motifs.rose);
+    return `<div class="tile">${inner}</div>`;
+  }).join('');
+  // contact card — real profile photo if pfp is set, otherwise the initials avatar
+  const avatar = (a.pfp && isImg(a.pfp))
+    ? `<img src="${a.pfp}" alt="${a.name}">`
+    : head(a.initials);
+  card.innerHTML=`
+    <h3>Contact</h3>
+    <div class="head">
+      <div class="headshot">${avatar}</div>
+      <div><div class="who">${a.name}</div><div class="role">${a.role}</div></div>
+    </div>
+    <p class="bio">${a.bio}</p>
+    <div class="meta">
+      <a href="https://instagram.com/${a.ig}" target="_blank" rel="noopener"><span class="ic">⌖</span>@${a.ig}</a>
+      <a href="tel:${a.num.replace(/\D/g,'')}"><span class="ic">☎</span>${a.num}</a>
+    </div>`;
+}
+nameList.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(b) render(+b.dataset.i);
+});
+render(0);
+
+/* ---------- inquiry: opens pre-filled email ---------- */
+const note=document.getElementById('formNote');
+document.getElementById('sendBtn').addEventListener('click',()=>{
+  const n=document.getElementById('f-name').value.trim();
+  const p=document.getElementById('f-num').value.trim();
+  const m=document.getElementById('f-msg').value.trim();
+  if(!n||!m){
+    note.textContent='Please add at least your name and a message.';
+    note.classList.add('err'); return;
+  }
+  note.classList.remove('err');
+  const subject=encodeURIComponent(`Shop Inquiry — ${n}`);
+  const body=encodeURIComponent(`Name: ${n}\nPhone: ${p||'(not given)'}\n\n${m}`);
+  window.location.href=`mailto:soulexpressionsweb@gmail.com?subject=${subject}&body=${body}`;
+  note.textContent='Opening your email to send the sigil…';
+});
+</script>
